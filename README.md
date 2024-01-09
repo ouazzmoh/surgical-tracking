@@ -17,6 +17,8 @@ To run this pipeline :
 
 ![triang](./triangulated_trajectory.png "Triangulation of simple trajectory from left camera to right camera")
 
+<img src="https://github.com/ouazzmoh/surgical-tracking/blob/master/triangulated_trajectory.png" alt="triang" style="transform: rotate(270deg);"/>
+
 #### How to use the QuadCam
 The class `src/quadcam.py` provides a high level interacation with the cameras. 
 A basic pipeline of the use would be the following 
