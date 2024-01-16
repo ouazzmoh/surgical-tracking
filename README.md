@@ -15,7 +15,7 @@ The goal of the module is to track in real time the position of a surgical instr
 To run this pipeline :
 `python main.py`
 
-![Simple trajectory from left camera to right camera](./triangulated_trajectory.png_)
+<img src="https://github.com/ouazzmoh/surgical-tracking/blob/master/triangulated_trajectory.png" alt="triang" style="transform: rotate(90deg);"/>
 
 #### How to use the QuadCam
 The class `src/quadcam.py` provides a high level interacation with the cameras. 
