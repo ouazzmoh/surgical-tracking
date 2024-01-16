@@ -7,7 +7,7 @@ from quadcam import QuadCam
 
 # The goal of this script is to fill the calibration folder 
 
-CALIB_DIR = "/home/cs/Desktop/stable/data/calibration_images/"
+CALIB_DIR = "/home/cs/Desktop/surgical-tracking/data/calibration_images/"
 
 
 def solo_chess_cycle(index):

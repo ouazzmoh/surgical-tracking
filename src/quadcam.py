@@ -260,7 +260,7 @@ class QuadCam:
             criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 100, 0.001)
             rows = 4 # number of rows 
             columns = 8 # number of columns in the chessboard
-            world_size = .7
+            world_size = .6
 
             objp = np.zeros((rows*columns, 3), np.float32)
             objp[:, :2] = np.mgrid[0:rows, 0:columns].T.reshape(-1, 2)
