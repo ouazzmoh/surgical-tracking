@@ -1,0 +1,3 @@
+[submodule "MultiCamCalib"]
+	path = MultiCamCalib
+	url = https://github.com/hjoonpark/MultiCamCalib

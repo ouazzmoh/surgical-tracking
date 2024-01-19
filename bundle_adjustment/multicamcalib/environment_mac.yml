@@ -1,0 +1,50 @@
+name: camcalib
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - ca-certificates
+  - certifi
+  - cycler
+  - freetype
+  - icu
+  - jbig
+  - jpeg
+  - kiwisolver
+  - lcms2
+  - lerc
+  - libblas
+  - libcblas
+  - libclang
+  - libdeflate
+  - liblapack
+  - libpng
+  - libtiff
+  - lz4-c
+  - matplotlib
+  - matplotlib-base
+  - numpy
+  - olefile
+  - openjpeg
+  - openssl
+  - pillow
+  - pip
+  - pyparsing
+  - pyqt
+  # - pyqt-impl nOT AVAILABLE ON MAC
+  - pyqt5-sip
+  - pyqtchart
+  - pyqtwebengine
+  - python
+  - python-dateutil
+  - python_abi
+  - qt
+  - setuptools
+  - six
+  - sqlite
+  - tbb
+  - tk
+  - tornado
+  - tqdm
+  - opencv-python # added by ouazzmoh for mac
+  - torch torchvision torchaudio # macos

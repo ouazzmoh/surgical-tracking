@@ -1,0 +1,3 @@
+/Users/simo/MultiCamCalib/ceres_bundle_adjustment/build/CMakeFiles/CeresMulticamCalib.dir
+/Users/simo/MultiCamCalib/ceres_bundle_adjustment/build/CMakeFiles/edit_cache.dir
+/Users/simo/MultiCamCalib/ceres_bundle_adjustment/build/CMakeFiles/rebuild_cache.dir
