@@ -1,0 +1,10 @@
+{
+    "2279": {
+        "crop_idx": 2279,
+        "recon_loss": 91.58119201660156,
+        "img_name": "3_0056",
+        "camera_idx": 3,
+        "corner_idx": 7,
+        "idx_for_curr_cam": 263
+    }
+}

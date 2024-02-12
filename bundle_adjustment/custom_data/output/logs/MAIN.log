@@ -1,0 +1,123 @@
+2024-02-12 02:21:57,554 | MAIN | INFO | ### APPLICATION START ###
+2024-02-12 02:22:07,347 | MAIN | INFO | >>>>>>>>>> [1] Corner detection <<<<<<<<<<
+2024-02-12 02:22:07,355 | MAIN | INFO | Corner detection - START	: camera 0	| 81 images
+2024-02-12 02:22:07,367 | MAIN | INFO | Corner detection - START	: camera 1	| 81 images
+2024-02-12 02:22:07,380 | MAIN | INFO | Corner detection - START	: camera 2	| 81 images
+2024-02-12 02:22:07,391 | MAIN | INFO | Corner detection - START	: camera 3	| 81 images
+2024-02-12 02:22:11,077 | MAIN | INFO | Corner detection - COMPLETE	: camera 2	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/corners/cam_2
+2024-02-12 02:22:11,214 | MAIN | INFO | Corner detection - COMPLETE	: camera 3	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/corners/cam_3
+2024-02-12 02:22:11,216 | MAIN | INFO | Corner detection - COMPLETE	: camera 1	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/corners/cam_1
+2024-02-12 02:22:11,221 | MAIN | INFO | Corner detection - COMPLETE	: camera 0	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/corners/cam_0
+2024-02-12 02:22:12,435 | MAIN | INFO | Detection result saved to: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/corners/detection_result.json
+2024-02-12 02:22:12,435 | MAIN | INFO | ***** FINISHED *****
+
+2024-02-12 02:31:35,126 | MAIN | INFO | ### APPLICATION START ###
+2024-02-12 02:31:37,287 | MAIN | INFO | >>>>>>>>>> [1] Corner detection <<<<<<<<<<
+2024-02-12 02:31:37,292 | MAIN | INFO | Corner detection - START	: camera 0	| 83 images
+2024-02-12 02:31:37,302 | MAIN | INFO | Corner detection - START	: camera 1	| 83 images
+2024-02-12 02:31:37,314 | MAIN | INFO | Corner detection - START	: camera 2	| 83 images
+2024-02-12 02:31:37,326 | MAIN | INFO | Corner detection - START	: camera 3	| 83 images
+2024-02-12 02:31:40,765 | MAIN | INFO | Corner detection - COMPLETE	: camera 2	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/corners/cam_2
+2024-02-12 02:31:41,118 | MAIN | INFO | Corner detection - COMPLETE	: camera 1	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/corners/cam_1
+2024-02-12 02:31:41,143 | MAIN | INFO | Corner detection - COMPLETE	: camera 0	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/corners/cam_0
+2024-02-12 02:31:41,301 | MAIN | INFO | Corner detection - COMPLETE	: camera 3	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/corners/cam_3
+2024-02-12 02:31:42,393 | MAIN | INFO | Detection result saved to: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/corners/detection_result.json
+2024-02-12 02:31:42,393 | MAIN | INFO | ***** FINISHED *****
+
+2024-02-12 02:32:17,780 | MAIN | INFO | ### APPLICATION START ###
+2024-02-12 02:32:28,412 | MAIN | INFO | >>>>>>>>>> [2] Vae outlier corner detection <<<<<<<<<<
+2024-02-12 02:32:28,881 | MAIN | INFO | Crops saved (camera 0): (gray) /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/vae_outlier_detector/corner_crops/0_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/vae_outlier_detector/corner_crops/0_binary.npy
+2024-02-12 02:32:29,267 | MAIN | INFO | Crops saved (camera 1): (gray) /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/vae_outlier_detector/corner_crops/1_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/vae_outlier_detector/corner_crops/1_binary.npy
+2024-02-12 02:32:29,855 | MAIN | INFO | Crops saved (camera 2): (gray) /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/vae_outlier_detector/corner_crops/2_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/vae_outlier_detector/corner_crops/2_binary.npy
+2024-02-12 02:32:30,071 | MAIN | INFO | Crops saved (camera 3): (gray) /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/vae_outlier_detector/corner_crops/3_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/vae_outlier_detector/corner_crops/3_binary.npy
+2024-02-12 02:32:30,082 | MAIN | INFO | Crops metadata saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/vae_outlier_detector/corner_crops/crop_metadata.json
+2024-02-12 02:32:30,096 | MAIN | INFO | Train input: 2304 crops | batch_size=1000 | n_batch=2 | trunc=2000 | unused=304
+2024-02-12 02:32:30,278 | MAIN | INFO | Hyperparameters saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/vae_outlier_detector/train_hyper_params.json
+2024-02-12 02:38:13,989 | MAIN | INFO | Train plot saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/vae_outlier_detector/train_loss_plot.png
+2024-02-12 02:38:13,991 | MAIN | INFO | Model saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/vae_outlier_detector/vae_model.pt
+2024-02-12 02:38:14,596 | MAIN | INFO | VAE forward result saved to: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/vae_outlier_detector/vae_forward_result.json
+2024-02-12 02:38:14,606 | MAIN | INFO | Outliers saved to: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/vae_outlier_detector/outliers/outliers.json
+2024-02-12 02:38:14,607 | MAIN | INFO | ***** FINISHED *****
+
+2024-02-12 02:39:10,303 | MAIN | INFO | ### APPLICATION START ###
+2024-02-12 02:39:18,962 | MAIN | INFO | >>>>>>>>>> [3] Initial calibration <<<<<<<<<<
+2024-02-12 02:39:19,090 | MAIN | INFO | Intrinsics calibrated: camera 0 | 18 images | error=1.26
+2024-02-12 02:39:19,165 | MAIN | INFO | Intrinsics calibrated: camera 1 | 18 images | error=1.85
+2024-02-12 02:39:19,323 | MAIN | INFO | Intrinsics calibrated: camera 2 | 27 images | error=0.81
+2024-02-12 02:39:19,325 | MAIN | DEBUG | Skipping outlier image for intrinsics: 3_0056
+2024-02-12 02:39:19,350 | MAIN | INFO | Intrinsics calibrated: camera 3 | 8 images | error=1.71
+2024-02-12 02:39:19,635 | MAIN | INFO | Stereo-calibrated: camera 0 & 1 | 3 images | error=2.67
+2024-02-12 02:39:20,179 | MAIN | INFO | Stereo-calibrated: camera 1 & 2 | 3 images | error=11.68
+2024-02-12 02:39:20,180 | MAIN | DEBUG | Skipping outlier image for extrinsics: 2_0056, 3_0056
+2024-02-12 02:39:20,712 | MAIN | INFO | Stereo-calibrated: camera 2 & 3 | 3 images | error=36.04
+2024-02-12 02:39:20,714 | MAIN | INFO | Initial camera parameters saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/cam_params/cam_params_initial.json
+2024-02-12 02:39:20,937 | MAIN | INFO | Plot saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/cam_params/initial_cameras.png
+2024-02-12 02:39:20,937 | MAIN | DEBUG | [1/83] No detection for image 0000
+2024-02-12 02:39:20,937 | MAIN | DEBUG | [2/83] No detection for image 0001
+2024-02-12 02:39:20,937 | MAIN | DEBUG | [3/83] No detection for image 0002
+2024-02-12 02:39:20,937 | MAIN | DEBUG | [4/83] No detection for image 0003
+2024-02-12 02:39:20,939 | MAIN | DEBUG | [8/83] No detection for image 0007
+2024-02-12 02:39:20,939 | MAIN | DEBUG | [9/83] No detection for image 0008
+2024-02-12 02:39:20,942 | MAIN | DEBUG | [16/83] No detection for image 0015
+2024-02-12 02:39:20,942 | MAIN | DEBUG | [17/83] No detection for image 0016
+2024-02-12 02:39:20,945 | MAIN | DEBUG | [30/83] No detection for image 0029
+2024-02-12 02:39:20,945 | MAIN | DEBUG | [31/83] No detection for image 0030
+2024-02-12 02:39:20,945 | MAIN | DEBUG | [33/83] No detection for image 0032
+2024-02-12 02:39:20,946 | MAIN | DEBUG | [34/83] No detection for image 0033
+2024-02-12 02:39:20,946 | MAIN | DEBUG | [35/83] No detection for image 0034
+2024-02-12 02:39:20,946 | MAIN | DEBUG | [38/83] No detection for image 0037
+2024-02-12 02:39:20,946 | MAIN | DEBUG | [39/83] No detection for image 0038
+2024-02-12 02:39:20,947 | MAIN | DEBUG | [41/83] No detection for image 0040
+2024-02-12 02:39:20,947 | MAIN | DEBUG | [44/83] No detection for image 0043
+2024-02-12 02:39:20,948 | MAIN | DEBUG | [47/83] No detection for image 0046
+2024-02-12 02:39:20,949 | MAIN | DEBUG | [54/83] No detection for image 0053
+2024-02-12 02:39:20,949 | MAIN | DEBUG | [55/83] No detection for image 0054
+2024-02-12 02:39:20,950 | MAIN | DEBUG | [58/83] No detection for image 0057
+2024-02-12 02:39:20,951 | MAIN | DEBUG | [61/83] No detection for image 0060
+2024-02-12 02:39:20,952 | MAIN | DEBUG | [67/83] No detection for image 0066
+2024-02-12 02:39:20,952 | MAIN | DEBUG | [69/83] No detection for image 0068
+2024-02-12 02:39:20,952 | MAIN | DEBUG | [70/83] No detection for image 0069
+2024-02-12 02:39:20,952 | MAIN | DEBUG | [72/83] No detection for image 0071
+2024-02-12 02:39:20,953 | MAIN | DEBUG | [74/83] No detection for image 0073
+2024-02-12 02:39:20,953 | MAIN | DEBUG | [75/83] No detection for image 0074
+2024-02-12 02:39:20,953 | MAIN | DEBUG | [76/83] No detection for image 0075
+2024-02-12 02:39:20,953 | MAIN | DEBUG | [77/83] No detection for image 0076
+2024-02-12 02:39:20,953 | MAIN | DEBUG | [80/83] No detection for image 0079
+2024-02-12 02:39:20,953 | MAIN | DEBUG | [81/83] No detection for image 0080
+2024-02-12 02:39:20,953 | MAIN | DEBUG | [82/83] No detection for image 0081
+2024-02-12 02:39:20,953 | MAIN | DEBUG | [83/83] No detection for image 0082
+2024-02-12 02:39:20,961 | MAIN | INFO | Initial world points saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/world_points/world_points_initial.json
+2024-02-12 02:39:21,129 | MAIN | INFO | Initial world points plot saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/world_points/initial_world_points.png
+2024-02-12 02:39:21,129 | MAIN | INFO | ***** FINISHED *****
+
+2024-02-12 02:39:40,350 | MAIN | INFO | ### APPLICATION START ###
+2024-02-12 02:39:42,443 | MAIN | INFO | >>>>>>>>>> [4] Final calibration (bundle adjustment) <<<<<<<<<<
+2024-02-12 02:41:29,126 | MAIN | INFO | ***** FINISHED *****
+
+2024-02-12 02:41:43,896 | MAIN | INFO | ### APPLICATION START ###
+2024-02-12 02:41:46,714 | MAIN | INFO | >>>>>>>>>> [5] Analysis <<<<<<<<<<
+2024-02-12 02:41:47,067 | MAIN | INFO | Two plots saved:
+	/Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/cam_params/final_cameras.png
+	/Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/world_points/final_world_points.png
+2024-02-12 02:41:47,077 | MAIN | INFO | Reprojections saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/reprojections.json
+2024-02-12 02:41:47,083 | MAIN | DEBUG | Skipping outlier image during reprojection result rendering: 3_0056
+2024-02-12 02:41:47,083 | MAIN | INFO | (Cross-check) manually recalculated Ceres loss: 485,882.76 (excluding regularization loss)
+2024-02-12 02:41:47,824 | MAIN | INFO | Plot saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/reproj_err_histograms.png
+2024-02-12 02:41:47,824 | MAIN | INFO | Saving images to: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images
+2024-02-12 02:41:51,760 | MAIN | DEBUG | Image saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images/180.383_0005.png
+2024-02-12 02:41:55,241 | MAIN | DEBUG | Image saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images/144.864_0009.png
+2024-02-12 02:41:59,415 | MAIN | DEBUG | Image saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images/274.255_0010.png
+2024-02-12 02:42:03,170 | MAIN | DEBUG | Image saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images/184.992_0011.png
+2024-02-12 02:42:06,457 | MAIN | DEBUG | Image saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images/145.649_0017.png
+2024-02-12 02:42:09,686 | MAIN | DEBUG | Image saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images/143.685_0020.png
+2024-02-12 02:42:13,019 | MAIN | DEBUG | Image saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images/96.040_0021.png
+2024-02-12 02:42:16,415 | MAIN | DEBUG | Image saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images/113.459_0026.png
+2024-02-12 02:42:19,751 | MAIN | DEBUG | Image saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images/182.522_0027.png
+2024-02-12 02:42:23,153 | MAIN | DEBUG | Image saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images/148.037_0028.png
+2024-02-12 02:42:26,960 | MAIN | DEBUG | Image saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images/239.806_0039.png
+2024-02-12 02:42:31,202 | MAIN | DEBUG | Image saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images/264.474_0044.png
+2024-02-12 02:42:34,513 | MAIN | DEBUG | Image saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images/61.401_0052.png
+2024-02-12 02:42:38,331 | MAIN | DEBUG | Image saved: /Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/analysis/images/234.847_0056.png
+2024-02-12 02:42:38,331 | MAIN | INFO | Finished rendering: 14 images
+2024-02-12 02:42:38,332 | MAIN | INFO | ***** FINISHED *****
+

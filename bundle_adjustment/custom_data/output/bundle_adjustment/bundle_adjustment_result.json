@@ -1,0 +1,7 @@
+{
+    "initial_cost": 55629244608.46858,
+    "final_cost": 485906.0333393911,
+    "n_iterations": 1000,
+    "final_camera_parameters": "/Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/cam_params/cam_params_final.json",
+    "final_world_points": "/Users/simo/surgical-tracking/bundle_adjustment/custom_data/output/world_points/world_points_final.json"
+}
