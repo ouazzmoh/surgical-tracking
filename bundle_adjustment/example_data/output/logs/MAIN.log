@@ -1,0 +1,55 @@
+2024-02-08 15:48:33,303 | MAIN | INFO | ### APPLICATION START ###
+2024-02-08 15:48:36,227 | MAIN | INFO | >>>>>>>>>> [1] Corner detection <<<<<<<<<<
+2024-02-08 15:48:36,236 | MAIN | INFO | Corner detection - START	: camera 0	| 251 images
+2024-02-08 15:48:36,249 | MAIN | INFO | Corner detection - START	: camera 1	| 251 images
+2024-02-08 15:48:36,261 | MAIN | INFO | Corner detection - START	: camera 2	| 251 images
+2024-02-08 15:48:36,274 | MAIN | INFO | Corner detection - START	: camera 3	| 251 images
+2024-02-08 15:48:36,284 | MAIN | INFO | Corner detection - START	: camera 4	| 251 images
+2024-02-08 15:48:36,296 | MAIN | INFO | Corner detection - START	: camera 5	| 251 images
+2024-02-08 15:48:36,311 | MAIN | INFO | Corner detection - START	: camera 6	| 251 images
+2024-02-08 15:48:36,326 | MAIN | INFO | Corner detection - START	: camera 7	| 251 images
+2024-02-08 15:48:36,341 | MAIN | INFO | Corner detection - START	: camera 8	| 251 images
+2024-02-08 15:48:36,355 | MAIN | INFO | Corner detection - START	: camera 9	| 251 images
+2024-02-08 15:48:36,370 | MAIN | INFO | Corner detection - START	: camera 10	| 251 images
+2024-02-08 15:48:36,384 | MAIN | INFO | Corner detection - START	: camera 11	| 251 images
+2024-02-08 15:48:36,398 | MAIN | INFO | Corner detection - START	: camera 12	| 251 images
+2024-02-08 15:48:36,412 | MAIN | INFO | Corner detection - START	: camera 13	| 251 images
+2024-02-08 15:48:36,424 | MAIN | INFO | Corner detection - START	: camera 14	| 251 images
+2024-02-08 15:48:36,437 | MAIN | INFO | Corner detection - START	: camera 15	| 251 images
+2024-02-08 15:48:58,756 | MAIN | INFO | Corner detection - COMPLETE	: camera 12	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_12
+2024-02-08 15:48:59,432 | MAIN | INFO | Corner detection - COMPLETE	: camera 9	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_9
+2024-02-08 15:49:00,134 | MAIN | INFO | Corner detection - COMPLETE	: camera 4	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_4
+2024-02-08 15:49:00,808 | MAIN | INFO | Corner detection - COMPLETE	: camera 5	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_5
+2024-02-08 15:49:01,030 | MAIN | INFO | Corner detection - COMPLETE	: camera 13	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_13
+2024-02-08 15:49:01,132 | MAIN | INFO | Corner detection - COMPLETE	: camera 8	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_8
+2024-02-08 15:49:01,437 | MAIN | INFO | Corner detection - COMPLETE	: camera 11	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_11
+2024-02-08 15:49:01,466 | MAIN | INFO | Corner detection - COMPLETE	: camera 14	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_14
+2024-02-08 15:49:01,531 | MAIN | INFO | Corner detection - COMPLETE	: camera 6	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_6
+2024-02-08 15:49:01,858 | MAIN | INFO | Corner detection - COMPLETE	: camera 2	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_2
+2024-02-08 15:49:01,936 | MAIN | INFO | Corner detection - COMPLETE	: camera 3	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_3
+2024-02-08 15:49:02,224 | MAIN | INFO | Corner detection - COMPLETE	: camera 1	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_1
+2024-02-08 15:49:02,258 | MAIN | INFO | Corner detection - COMPLETE	: camera 15	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_15
+2024-02-08 15:49:02,310 | MAIN | INFO | Corner detection - COMPLETE	: camera 0	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_0
+2024-02-08 15:49:02,357 | MAIN | INFO | Corner detection - COMPLETE	: camera 7	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_7
+2024-02-08 15:49:02,500 | MAIN | INFO | Corner detection - COMPLETE	: camera 10	| Corners saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/cam_10
+2024-02-08 15:49:04,068 | MAIN | INFO | Detection result saved to: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/corners/detection_result.json
+2024-02-08 15:49:04,068 | MAIN | INFO | >>>>>>>>>> [2] Vae outlier corner detection <<<<<<<<<<
+2024-02-08 15:49:04,673 | MAIN | INFO | Crops saved (camera 0): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/0_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/0_binary.npy
+2024-02-08 15:49:05,092 | MAIN | INFO | Crops saved (camera 1): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/1_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/1_binary.npy
+2024-02-08 15:49:05,521 | MAIN | INFO | Crops saved (camera 2): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/2_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/2_binary.npy
+2024-02-08 15:49:05,907 | MAIN | INFO | Crops saved (camera 3): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/3_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/3_binary.npy
+2024-02-08 15:49:06,358 | MAIN | INFO | Crops saved (camera 4): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/4_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/4_binary.npy
+2024-02-08 15:49:06,843 | MAIN | INFO | Crops saved (camera 5): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/5_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/5_binary.npy
+2024-02-08 15:49:07,635 | MAIN | INFO | Crops saved (camera 6): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/6_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/6_binary.npy
+2024-02-08 15:49:08,467 | MAIN | INFO | Crops saved (camera 7): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/7_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/7_binary.npy
+2024-02-08 15:49:09,374 | MAIN | INFO | Crops saved (camera 8): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/8_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/8_binary.npy
+2024-02-08 15:49:10,299 | MAIN | INFO | Crops saved (camera 9): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/9_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/9_binary.npy
+2024-02-08 15:49:10,876 | MAIN | INFO | Crops saved (camera 10): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/10_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/10_binary.npy
+2024-02-08 15:49:11,347 | MAIN | INFO | Crops saved (camera 11): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/11_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/11_binary.npy
+2024-02-08 15:49:11,848 | MAIN | INFO | Crops saved (camera 12): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/12_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/12_binary.npy
+2024-02-08 15:49:12,365 | MAIN | INFO | Crops saved (camera 13): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/13_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/13_binary.npy
+2024-02-08 15:49:12,891 | MAIN | INFO | Crops saved (camera 14): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/14_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/14_binary.npy
+2024-02-08 15:49:13,440 | MAIN | INFO | Crops saved (camera 15): (gray) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/15_gray.npy	(binary) /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/15_binary.npy
+2024-02-08 15:49:13,791 | MAIN | INFO | Crops metadata saved: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/corner_crops/crop_metadata.json
+2024-02-08 15:49:13,917 | MAIN | INFO | Train input: 72336 crops | batch_size=1000 | n_batch=72 | trunc=72000 | unused=336
+2024-02-08 15:49:14,170 | MAIN | INFO | Hyperparameters saved: /Users/simo/surgical-tracking/bundle_adjustment/example_data/output/vae_outlier_detector/train_hyper_params.json

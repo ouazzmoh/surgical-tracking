@@ -3,7 +3,7 @@
 #define CeresMulticamCalib_VERSION_MAJOR 1
 #define CeresMulticamCalib_VERSION_MINOR 0
 
-#define ROOT_DIR "/Users/simo/MultiCamCalib/ceres_bundle_adjustment"
+#define ROOT_DIR "/Users/simo/surgical-tracking/bundle_adjustment/ceres_bundle_adjustment"
 #define NUM_CAM_PARAMS 15
 // #define CERES_INCLUDE_DIRS "@CERES_INCLUDE_DIRS"
 

@@ -10,14 +10,18 @@
 #include "parser.h"
 #include "checkerboard.h"
 #include "bund_adj_6dof.h"
-int main(int argc, char* argv[])
-{
-    std::cout << argv[0] << " Version " << CeresMulticamCalib_VERSION_MAJOR << "." << CeresMulticamCalib_VERSION_MINOR << std::endl;
 
+int main(int argc, char* argv[])
+{   std::cout << "works2" << std::endl;
+
+    // std::cout << argv[0] << " Version " << CeresMulticamCalib_VERSION_MAJOR << "." << CeresMulticamCalib_VERSION_MINOR << std::endl;
+    std::cout << "works2" << std::endl;
     std::stringstream config_path;
     config_path << ROOT_DIR <<  OS_SEP << ".." << OS_SEP << "multicamcalib" << OS_SEP << "config.json";
     Config config;
+    std::cout << "works1";
     Parser::loadConfig(config_path.str().c_str(), config);
+    std::cout << "works2";
     std::cout << "Read: " << config_path.str() << std::endl;
     std::cout << "  - chb=(" << config.chb_n_rows << " x " << config.chb_n_cols << "), size=" << config.chb_sqr_size << "mm" << ", n_cams=" << config.n_cams << std::endl;
 
@@ -41,3 +45,10 @@ int main(int argc, char* argv[])
 
     return 0;
 }
+
+// int main(){
+
+//     std::cout << "Hello" << std::endl;
+
+//     return 0;
+// }

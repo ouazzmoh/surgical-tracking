@@ -1,7 +1,7 @@
 {
     "paths": {
-        "abs_image_paths_file": "/Users/simo/MultiCamCalib/example_data/image_paths.txt",
-        "abs_output_dir": "/Users/simo/MultiCamCalib/example_data/output",
+        "abs_image_paths_file": "/Users/simo/surgical-tracking/bundle_adjustment/custom_data/image_paths.txt",
+        "abs_output_dir": "/Users/simo/surgical-tracking/bundle_adjustment/custom_data/output",
         "logs": "logs",
         "corners": "corners",
         "vae_outlier_detector": "vae_outlier_detector",
@@ -18,7 +18,7 @@
         "sqr_size": 60
     },
     "cameras": {
-        "n_cams": 16
+        "n_cams": 4
     },
     "vae_outlier_detector": {
         "z_dim": 2,
@@ -29,8 +29,8 @@
         "outlier_thres_ratio": 0.0005
     },
     "calib_initial": {
-        "center_cam_idx": 12,
-        "center_img_name": "0000",
+        "center_cam_idx": 0,
+        "center_img_name": "0013",
         "intrinsics": {
             "n_max_imgs": 40
         },

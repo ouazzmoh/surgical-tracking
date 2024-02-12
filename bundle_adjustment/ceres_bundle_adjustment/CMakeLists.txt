@@ -17,7 +17,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_OUTPUT_DIR})
 #############################################
 if (WIN32)
     # copy dlls
-    set(CERES_ROOT_DIR "/Users/simo/MultiCamCalib/ceres-solver/include/ceres")
+    set(CERES_ROOT_DIR "/Users/simo/surgical-tracking/bundle_adjustment/ceres-solver/include/ceres")
     set(SUITESPARSE_WIN_x64_DIR "${CERES_ROOT_DIR}/suitesparse/lapack_windows/x64")
     set(PROJECT_OUTPUT_DIR_RELEASE "${PROJECT_OUTPUT_DIR}/Release")
     set(DLL_PATHS 
@@ -39,7 +39,7 @@ endif()
 #############################################
 if (APPLE)
     # set the Ceres root directory
-    set(CERES_ROOT_DIR "/Users/simo/MultiCamCalib/ceres-solver/include/ceres")
+    set(CERES_ROOT_DIR "/Users/simo/surgical-tracking/bundle_adjustment/ceres-solver/include/ceres")
     find_package(Ceres REQUIRED)
     find_package(Eigen3 REQUIRED)
     include_directories(${EIGEN3_INCLUDE_DIRS})
@@ -53,23 +53,24 @@ target_include_directories(${TARGET_NAME} PUBLIC
                             "include"
                             )
 
-#############################################
-if (WIN32)
-    # link external ceres library
-    # find_package(Ceres REQUIRED)
-    find_package(Ceres REQUIRED PATHS "${CERES_ROOT_DIR}/ceres-install") # if the install directory is not in your PATH
-endif()
-if (UNIX AND NOT APPLE)
-    find_package(Ceres REQUIRED)
-    find_package(Eigen3 REQUIRED)
-    # EIGEN3_INCLUDE_DIRS = /usr/include/eigen3
-    include_directories(${EIGEN3_INCLUDE_DIRS})
-endif()
+# #############################################
+# if (WIN32)
+#     # link external ceres library
+#     # find_package(Ceres REQUIRED)
+#     find_package(Ceres REQUIRED PATHS "${CERES_ROOT_DIR}/ceres-install") # if the install directory is not in your PATH
+# endif()
+# if (UNIX AND NOT APPLE)
+#     find_package(Ceres REQUIRED)
+#     find_package(Eigen3 REQUIRED)
+#     # EIGEN3_INCLUDE_DIRS = /usr/include/eigen3
+#     include_directories(${EIGEN3_INCLUDE_DIRS})
+# endif()
 
-target_include_directories(${TARGET_NAME}
-    PRIVATE
-    ${CERES_INCLUDE_DIRS}
-)
+
+# target_include_directories(${TARGET_NAME}
+#     PRIVATE
+#     ${CERES_INCLUDE_DIRS}
+# )
 target_link_libraries(${TARGET_NAME}
     PRIVATE
     ${CERES_LIBRARIES}

@@ -92,6 +92,8 @@ namespace Parser {
         config.center_cam_idx = calib_initial["center_cam_idx"].GetInt();
         config.center_img_name = calib_initial["center_img_name"].GetString();
 
+    
+
         // parse bundle adjustment configs
         const rapidjson::Value &bund_info = doc["bundle_adjustment"];
         config.max_iter = bund_info["max_iter"].GetInt();
