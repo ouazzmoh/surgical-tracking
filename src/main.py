@@ -1,6 +1,7 @@
 import cv2 
 import numpy as np
 import matplotlib.pyplot as plt
+import threading
 
 
 from quadcam import QuadCam
@@ -18,28 +19,58 @@ CALIB_OUT = "/Users/simo/surgical-tracking/data/calib.pickle"
 
 
 def main():
-    quadcam = QuadCam()
-    # quadcam.solo_calibrate_cameras(CALIB_DIR, indexes=[0, 1])
-    # quadcam.stereo_calibrate_cameras(CALIB_DIR, indexes=[(1, 0)])
-
+    # quadcam = QuadCam()
+    # # quadcam.solo_calibrate_cameras(CALIB_DIR, indexes=[0, 1])
+    # # quadcam.stereo_calibrate_cameras(CALIB_DIR, indexes=[(1, 0)])
+    #
+    # # print(quadcam.stereo_calibrations)
+    #
+    # # quadcam.save_calibration(CALIB_OUT)
+    #
+    # quadcam.load_calibration(CALIB_OUT)
+    #
     # print(quadcam.stereo_calibrations)
 
-    # quadcam.save_calibration(CALIB_OUT)
-
-    quadcam.load_calibration(CALIB_OUT)
-
-    print(quadcam.stereo_calibrations)
+    detect_red_parallel()
 
 
 
+def detect_red_parallel():
+    """
+    Launch a thread per cam to detect red
+    """
 
 
+def detect_red_parallel():
+    quadcam = QuadCam() # captures from 4 cameras
+    quadcam.open_camera() # opens the cameras
+    scale = 1800 / quadcam.prop_w if quadcam.prop_w > 0 else 1
 
+    detector = DetectorRed()
 
+    # Create a lock for the shared resource
+    resource_locks = [threading.Lock() for _ in range(4)]
 
+    def detect_and_display_red(id):
+        with resource_locks[id]:
+            frame_with_red, _, _ = detector.detect(quadcam.curr_frames[id])
+            cv2.imshow(f"ArducamRed{id}", frame_with_red)
 
+    while cv2.waitKey(1) != ord('q'):
+        quadcam.read(scale)
 
+        # Create and start threads for red detection and display
+        threads = [threading.Thread(target=detect_and_display_red, args=(i,)) for i in range(4)]
+        for thread in threads:
+            thread.start()
 
+        # Wait for all threads to finish
+        for thread in threads:
+            thread.join()
+
+    quadcam.close_cameras()
+
+    return 0
 
 
 # def detect_red_green():
