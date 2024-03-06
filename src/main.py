@@ -36,12 +36,6 @@ def main():
 
 
 def detect_red_parallel():
-    """
-    Launch a thread per cam to detect red
-    """
-
-
-def detect_red_parallel():
     quadcam = QuadCam() # captures from 4 cameras
     quadcam.open_camera() # opens the cameras
     scale = 1800 / quadcam.prop_w if quadcam.prop_w > 0 else 1

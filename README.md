@@ -55,6 +55,16 @@ Then to calibrate the cameras:
 * intirinsic : `quadcam.solo_calibrate_cameras()`
 * extrinsic : `quadcam.stereo_calibrate_cameras()`
 
+For a full calibration of the camera 
+`python quadcam.full_calibrate_cameras(calib_dir)`
+
+To save the calibration parameters
+`python quadcam.save_calibration("calibpath.pickle")`
+
+to load the calibration parameters
+`python quadcam.load_calibration("calibpath.pickle")`
+
+
 
 #### Instrument Detection
 

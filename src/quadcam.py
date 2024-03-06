@@ -328,7 +328,7 @@ class QuadCam:
             else :
                 print(f"Camera{i} could not be calibrated")
 
-    def full_calibrate_cameras(self, calibration_dir, indexes=[(1, 0)], show_chess=False):
+    def full_calibrate_cameras(self, calibration_dir):
         self.solo_calibrate_cameras(calibration_dir, indexes=[0, 1, 2, 3])
         self.stereo_calibrate_cameras(calibration_dir, indexes=[(1, 0), (2, 1), (3, 2), (0, 3)])
 
