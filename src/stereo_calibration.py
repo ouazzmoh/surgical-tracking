@@ -14,4 +14,10 @@ class StereoCalibration:
         self.F = F
     
     def __str__(self):
-        return f"T : {self.T} \n R : {self.R} "
+        return f"T : {self.T} \n R : {self.R}"
+
+    def __repr__(self):
+        return (f"mtx1 : {self.mtx1} \n mtx2 : {self.mtx2} \n dist1 : {self.dist1} "
+                f"\n dist2 : {self.dist2} \n R : {self.R} \n "
+                f"T : {self.T} \n E : {self.E} \n F : {self.F} \n "
+                f"RMSE : {self.rmse} \n")

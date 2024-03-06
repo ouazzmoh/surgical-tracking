@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import datetime
 import glob
+import pickle
 
 from stereo_calibration import StereoCalibration
 
@@ -27,7 +28,7 @@ class QuadCam:
                  prop_h = None,
                  outs = None):
         """
-            The color encoding is BGRGR and the the depth is by default 8
+            The color encoding is BGRGR and the depth is by default 8
             because it is 8-bit images.
             It is advised not to pass the width and height
             as parameters, the proper ones will be decided later
@@ -51,10 +52,15 @@ class QuadCam:
 
     def open_camera(self):
         """
-            Instatiate a capture instance and 
+            Instantiate a capture instance and
         """
-        self.cap = cv2.VideoCapture(self.device_id, cv2.CAP_V4L2) # CAP_V4L2 to use linux api
+        try:
+            self.cap = cv2.VideoCapture(self.device_id, cv2.CAP_V4L2) # CAP_V4L2 to use linux api
 
+        except Exception as e:
+            print(f"Could not open camera {self.device_id} : {e}")
+            self.cap = None
+            return
         # Set color conversion to rgb to False (It slows down FPS)
         self.cap.set(cv2.CAP_PROP_CONVERT_RGB, 0)
 
@@ -111,7 +117,7 @@ class QuadCam:
 
     def write(self, frame, out_stream):
         if not out_stream:
-            raise RuntimeError("Ouput stream not initialized")
+            raise RuntimeError("Output stream not initialized")
         out_stream.write(frame)
 
 
@@ -151,6 +157,7 @@ class QuadCam:
         """
         print("Calibrating for intrinsic parameters ...")
         for i in indexes:
+            num_detected = 0
             images_folder = calibration_dir + f"solo/camera{i}/*"
             images_names = sorted(glob.glob(images_folder))
             images = []
@@ -179,6 +186,7 @@ class QuadCam:
                 ret, corners = cv2.findChessboardCorners(gray, (rows, columns), None)
 
                 if ret == True:
+                    num_detected += 1
                     conv_size = (11, 11)
                     corners = cv2.cornerSubPix(gray, corners, conv_size, (-1, -1), criteria)
                     if show_chess:
@@ -191,14 +199,15 @@ class QuadCam:
                     imgpoints.append(corners)
                     
                 
-                else :
-                    print(f"Chess board not found for picture : {images_names[k]}")
+                # else :
+                    # print(f"Chess board not found for picture : {images_names[k]}")
                 
             if objpoints:
                 rmse, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints,
                                                                     (width, height), None, None)
 
                 # rmse score is related to the reprojuction error
+                print(f"Detected {num_detected} out of {len(images)} chess boards for camera{i}")
                 print(f"RMSE score for calibration of camera{i} is {rmse}")
                 self.matrices[i] = mtx
                 self.distortions[i] = dist
@@ -306,7 +315,7 @@ class QuadCam:
                 # Solve only for the extrinsic parameters
                 rmse, mtx1, dist1, mtx2, dist2, R, T, E, F = cv2.stereoCalibrate(objpoints, imgpoints_left, imgpoints_right,
                                                                     self.matrices[i], self.distortions[i],
-                                                                    self.matrices[i], self.distortions[j],
+                                                                    self.matrices[j], self.distortions[j],
                                                                     (width, height), criteria,
                                                                     flags = cv2.CALIB_FIX_INTRINSIC)
 
@@ -319,8 +328,32 @@ class QuadCam:
             else :
                 print(f"Camera{i} could not be calibrated")
 
+    def full_calibrate_cameras(self, calibration_dir, indexes=[(1, 0)], show_chess=False):
+        self.solo_calibrate_cameras(calibration_dir, indexes=[0, 1, 2, 3])
+        self.stereo_calibrate_cameras(calibration_dir, indexes=[(1, 0), (2, 1), (3, 2), (0, 3)])
 
-        
+
+
+    def save_calibration(self, path):
+        """
+            Save the calibration parameters to a file
+        """
+        with open(path, 'wb') as f:
+            pickle.dump(self.stereo_calibrations, f)
+        print("Calibration parameters saved")
+
+
+    def load_calibration(self, path):
+        """
+            Load the calibration parameters from a file
+        """
+        with open(path, 'rb') as f:
+            self.stereo_calibrations = pickle.load(f)
+        print("Calibration parameters loaded")
+
+
+
+
 
 
 
