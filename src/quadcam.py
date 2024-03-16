@@ -352,8 +352,70 @@ class QuadCam:
         print("Calibration parameters loaded")
 
 
+    def load_matlab_calibration(self):
+        """
+            Load the calibration parameters from a matlab file
+
+            This calibration was computed using matlab for stereo calibration
+
+        """
+        # Camera 0
+        self.matrices[0] = np.array([[925.150083817515, 0, 649.570132897099],
+                              [0, 923.175920622598, 408.253570992199],
+                              [0, 0, 1]])
+        self.distortions[0] = np.array([0.0265484763629214, -0.0474887177834878, 0, 0, 0])
+
+        # Camera 1
+        self.matrices[1] = np.array([[937.752950469242, 0, 648.5754302660850],
+                              [0, 935.0085176908548, 417.2890951011200],
+                              [0, 0, 1]])
+        self.distortions[1] = np.array([0.0565389663830701, -0.0407582629327157, 0, 0, 0])
+
+        # Camera 2
+        self.matrices[2] = np.array([[9.180240059463720e+02, 0, 6.277720522905485e+02],
+                              [0, 9.204316444213583e+02, 4.190038892235907e+02],
+                              [0, 0, 1]])
+        self.distortions[2] = np.array([0.0748385666898073, -0.128158374195814, 0, 0, 0])
+
+        # Camera 3
+        self.matrices[3] = np.array([[914.335833759638, 0, 630.292720701014],
+                              [0, 912.545961130766, 412.160970970405],
+                              [0, 0, 1]])
+        self.distortions[3] = np.array([-0.00325637150773476, 0.0130107394069182, 0, 0, 0])
+
+        # Stereo (0,1)
+        R01 = np.array([[-0.00541120042425319, -0.821718425226070, -0.569868009765381],
+                             [0.827234735343742, 0.316500160767844, -0.464230913312220],
+                             [0.561830411735372, -0.473926658754197, 0.678041378214741]])
+        T01 = np.array([[57.1694443257931],
+                             [47.7830161026164],
+                             [33.2653750415883]])
+        stereo01 = StereoCalibration((0, 1), -1, self.matrices[0], self.distortions[0], self.matrices[1],
+                                     self.distortions[1], R01, T01, 0, 0)
 
 
+        # Stereo (0,2)
+        R02 = np.array([[0.00794699837746728, 0.818037977742410, 0.575109304556879],
+                             [-0.820076269615747, 0.334429392684904, -0.464361812944956],
+                             [-0.572199053852686, -0.467943210528281, 0.673511243032050]])
+        T02 = np.array([[-58.1990635190221], [46.774633773674410], [33.716830213033795]])
+        stereo02 = StereoCalibration((0, 2), -1, self.matrices[0], self.distortions[0], self.matrices[2],
+                                     self.distortions[2], R02, T02, 0, 0)
+
+        # Stereo (0,3)
+        R03 = np.array([[-0.999862702282291, 0.00373839076817029, 0.0161431415535822],
+                             [-0.0164676879052049, -0.332457118625921, -0.942974591137008],
+                             [0.00184169482034835, -0.943110963094701, 0.332473035674736]])
+        T03 = np.array([[-1.12212719213900], [95.2909943777643], [67.1725791436523]])
+        stereo03 = StereoCalibration((0, 3), -1, self.matrices[0], self.distortions[0], self.matrices[3],
+                                     self.distortions[3], R03, T03, 0, 0)
+
+        # Stereo extra
+        Rextra = np.array([[1, 0, 0],
+                             [0, 0.81733806, 0.57615839],
+                             [0, -0.57615839, 0.81733806]])
+
+        self.stereo_calibrations = {(0,1) : stereo01, (0,2) : stereo02, (0,3) : stereo03}
 
 
 

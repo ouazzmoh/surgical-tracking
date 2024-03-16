@@ -1,39 +1,72 @@
 import cv2 
 import numpy as np
 import matplotlib.pyplot as plt
-import threading
 
 
 from quadcam import QuadCam
-from detector_red import DetectorRed
 from detector_green import DetectorGreen
 from reconstructor import Reconstructor
+from plot3d import Plot3DPoints
+from transformations import rotate_points
 
-# CALIBRATION_PATH = "/home/cs/Desktop/surgical-tracking/data/stereo_calibration_data.npy"
-# VIDEO_OUTPUT_DIR = "/home/cs/Desktop/surgical-tracking/outputs/"
-#
-# CALIB_DIR = "/Users/simo/surgical-tracking/data/calibration_images/"
-# CALIB_DIR2 = "/Users/simo/surgical-tracking/dataset1/"
-#
-# CALIB_OUT = "/Users/simo/surgical-tracking/data/calib.pickle"
-VIDEO_OUTPUT_DIR = '/Users/simo/surgical-tracking/video/'
+R = np.array([[1, 0, 0],
+             [0, 0.81733806, 0.57615839],
+             [0, -0.57615839, 0.81733806]])
 
 def main():
     quadcam = QuadCam()
-
+    quadcam.load_matlab_calibration()
     quadcam.open_camera()  # opens the cameras
-
-
+    detector = DetectorGreen()  # instantiate the detector
+    reconstructor = Reconstructor()  # instantiate the reconstructor
     scale = 1800 / quadcam.prop_w if quadcam.prop_w > 0 else 1
+    points_3d_01 = []
+    points_3d_02 = []
+    points_3d_03 = []
 
-    quadcam.init_video_writers(VIDEO_OUTPUT_DIR)
+    points_3d = []
+
+    plotter = Plot3DPoints()
 
     while cv2.waitKey(1) != ord('q'):
         quadcam.read(scale)
-        frame0 = quadcam.curr_frames[0]
-        frame1 = quadcam.curr_frames[1]
-        quadcam.write(frame0, quadcam.outs[0])
-        quadcam.write(frame1, quadcam.outs[1])
+        frame_with_green0, _, p0 = detector.detect(quadcam.curr_frames[0])
+        frame_with_green1, _, p1 = detector.detect(quadcam.curr_frames[1])
+        frame_with_green2, _, p2 = detector.detect(quadcam.curr_frames[2])
+        frame_with_green3, _, p3 = detector.detect(quadcam.curr_frames[3])
+
+        cv2.imshow("cam0", frame_with_green0)
+        cv2.imshow("cam1", frame_with_green1)
+        cv2.imshow("cam2", frame_with_green2)
+        cv2.imshow("cam3", frame_with_green3)
+
+        
+        if (p0, p1, p2, p3) is not None:
+            d_p3d_01 = np.dot(R,
+                              reconstructor.triangulate(p0, p1, quadcam.matrices[0], quadcam.matrices[1], np.eye(3),
+                                            np.zeros((3, 1)), quadcam.stereo_calibrations[(0, 1)].R,
+                                                        quadcam.stereo_calibrations[(0, 1)].T))
+            d_p3d_02 = np.dot(R,
+                              reconstructor.triangulate(p0, p2, quadcam.matrices[0], quadcam.matrices[2], np.eye(3),
+                                            np.zeros((3, 1)), quadcam.stereo_calibrations[(0, 2)].R,
+                                                        quadcam.stereo_calibrations[(0, 2)].T))
+            d_p3d_03 = np.dot(R,
+                              reconstructor.triangulate(p0, p3, quadcam.matrices[0], quadcam.matrices[3], np.eye(3),
+                                                        np.zeros((3, 1)), quadcam.stereo_calibrations[(0, 3)].R,
+                                                        quadcam.stereo_calibrations[(0, 3)].T))
+
+            mean_points = (d_p3d_01 + d_p3d_02 + d_p3d_03) / 3
+
+            points_3d.append(mean_points)
+
+            points_3d_01.append(d_p3d_01)
+            points_3d_02.append(d_p3d_02)
+            points_3d_03.append(d_p3d_03)
+
+    plotter.plot(points_3d, quadcam.stereo_calibrations[(0, 1)].T,
+                 quadcam.stereo_calibrations[(0, 2)].T,
+                 quadcam.stereo_calibrations[(0, 3)].T)
+
 
     quadcam.close_cameras()
 

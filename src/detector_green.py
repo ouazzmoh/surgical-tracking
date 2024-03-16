@@ -3,8 +3,9 @@ import numpy as np
 
 
 class DetectorGreen:
-    
-    def __init__(self, lower_green = np.array([40, 90, 20]), upper_green = np.array([50, 255, 255])):
+    # np.array([40, 90, 20])
+    # np.array([50, 255, 255])
+    def __init__(self, lower_green = np.array([70, 70, 80]), upper_green = np.array([80, 150, 255])):
         self.lower_green = lower_green
         self.upper_green = upper_green
 
