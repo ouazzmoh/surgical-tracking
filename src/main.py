@@ -41,7 +41,7 @@ def main():
         cv2.imshow("cam3", frame_with_green3)
 
         
-        if (p0, p1, p2, p3) is not None:
+        if p0 is not None and p1 is not None and p2 is not None and p3 is not None:
             d_p3d_01 = np.dot(R,
                               reconstructor.triangulate(p0, p1, quadcam.matrices[0], quadcam.matrices[1], np.eye(3),
                                             np.zeros((3, 1)), quadcam.stereo_calibrations[(0, 1)].R,
