@@ -8,6 +8,7 @@ R = np.array([[1, 0, 0],
 class Plot3DPoints:
     def __init__(self):
         # pass rotation as param ?
+        self.R = R
 
     def plot(self, points_3d_01, T1, T2, T3):
         if points_3d_01:
