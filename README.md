@@ -9,6 +9,15 @@ We designed and integrated a custom case and lighting system for protection and 
 - [3D Model](model_case.stl)
 ![](render_system.PNG)
 
+We designed and iOS application that shows real time location of detected surgical tool.
+
+[Link to Video](https://drive.google.com/file/d/1ugEHa49tsSA7sB_yQ4dKD5UCxvya_JOo/view?usp=sharing)
+
+<img width="200" alt="Ekran Resmi 2024-03-27 04 04 58" src="https://github.com/hfznr/computationalSurgineering/assets/82381246/881008a9-15c2-4322-80fa-874107c57bcb">
+
+<img width="600" alt="Ekran Resmi 2024-03-27 04 06 43" src="https://github.com/hfznr/computationalSurgineering/assets/82381246/a7165e01-aa41-4f1f-9b71-03c63b016df3">
+
+
 #### How does it work ?
 
 * Instanciate the cameras and start the recording, and the video capturers
@@ -21,6 +30,29 @@ To run this pipeline :
 `python main.py`
 
 <img src="https://github.com/ouazzmoh/surgical-tracking/blob/master/triangulated_trajectory.png" alt="triang" style="transform: rotate(90deg);"/>
+
+#### How do TCP and Application work?
+* Runs main part and tcp part as subprogram. So that they can work parallel.
+* First run run.py, then run application.
+- - **Main Part:**
+* Instanciate the cameras and start the recording, and the video capturers
+* Calibrate for intrinsic and extrinsic parameters
+* Instanciate the detector of the instrument `src/detector_red.py`
+* Instanciate the reconstructor `src/reconstructor.py`
+* Detect and reconstruct to get the points in 3d
+* Saves 3d coordinates in mean_points.txt
+- - **TCP Part:**
+* Reads 3d points from mean_points.txt
+* Send 3d position using tcp.
+* All local devices can connect and listen 3d position from device using ip:192.168.0.57 and port:5555
+- - **Application Part:**
+* Receives 3d points via tcp.
+* Changes location of surcial tool.
+* You can change view in 3d space.
+
+To run :
+`python run.py`
+`run using XCode SurgicalToolDetection`
 
 #### How to use the QuadCam
 The class `src/quadcam.py` provides a high level interacation with the cameras. 
@@ -84,6 +116,17 @@ The complete calibration dataset and results can be found in the following folde
 - [calibration](final_calibration)
 
 ![](final_calibration/calibration_results.png)
+
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+For application: XCode ide. 
+For hardware: Jetson Nano board, Quadcam(Arducam), jetson nano kernel, imx477 driver.
+Check this links: 
+- https://developer.nvidia.com/embedded/downloads/archive
+- https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#write
+- https://docs.arducam.com/Nvidia-Jetson-Camera/Multi-Camera-CamArray/quick-start/
+
 
 
 #### Instrument Detection
